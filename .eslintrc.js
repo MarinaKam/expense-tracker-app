@@ -44,6 +44,7 @@ module.exports = {
     'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 0,
     'react/jsx-filename-extension': 0,
+    'import/prefer-default-export': 0,
     'no-use-before-define': ['error', { functions: true, classes: true, variables: false }],
   },
 };
