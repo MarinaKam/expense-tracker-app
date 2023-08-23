@@ -11,11 +11,11 @@ export function TabNavigator() {
     <Tab.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: globalStyles.colors.primary500,
+          backgroundColor: globalStyles.colors.primaryA700,
         },
         headerTintColor: globalStyles.colors.common.white,
         tabBarStyle: {
-          backgroundColor: globalStyles.colors.primary500,
+          backgroundColor: globalStyles.colors.primaryA700,
         },
         tabBarActiveTintColor: globalStyles.colors.common.white,
         tabBarInactiveTintColor: globalStyles.colors.gray100,

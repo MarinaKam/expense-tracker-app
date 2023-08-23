@@ -1,9 +1,9 @@
 import { Text, View } from 'react-native';
 
-export function ManageExpenses() {
+export const ManageExpenses = () => {
   return (
     <View>
       <Text>ManageExpenses Screen</Text>
     </View>
   );
-}
+};
