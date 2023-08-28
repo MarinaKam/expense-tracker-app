@@ -20,7 +20,8 @@ export const ExpensesSummary = ({ expenses = [], periodName }) => {
 
 export const styles = StyleSheet.create({
   container: {
-    padding: 12,
+    paddingHorizontal: 18,
+    paddingTop: 6,
   },
   innerContainer: {
     padding: 8,
