@@ -6,8 +6,12 @@ export const ExpensesList = ({ expenses }) => {
     <FlatList
       data={expenses}
       keyExtractor={(item) => item.id}
-      renderItem={({ item }) => <ExpenseItem item={item} />}
+      renderItem={({ item }) => <ExpenseItem {...item} />}
       numColumns={1}
+      contentContainerStyle={{
+        paddingBottom: 12,
+        paddingTop: 6,
+      }}
     />
   );
 };

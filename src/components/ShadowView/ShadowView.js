@@ -1,4 +1,5 @@
 import { Platform, StyleSheet, View } from 'react-native';
+import { globalStyles } from '../../theme';
 
 export const ShadowView = ({ children, style }) => {
   return <View style={[styles.container, style]}>{children}</View>;
@@ -7,17 +8,17 @@ export const ShadowView = ({ children, style }) => {
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    borderRadius: 9,
+    borderRadius: 6,
     elevation: 4,
-    marginVertical: 16,
-    marginHorizontal: 12,
+    marginVertical: 8,
+    marginHorizontal: 18,
     overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
-    shadowColor: 'black',
+    shadowColor: globalStyles.colors.primary900,
     shadowOffset: {
-      width: 0,
-      height: 2,
+      width: 1,
+      height: 1,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 8,
+    shadowOpacity: 0.4,
+    shadowRadius: 4,
   },
 });
