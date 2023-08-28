@@ -6,11 +6,7 @@ import { ShadowView } from '../ShadowView';
 export const ExpenseItem = ({ description, amount, date, onPress = () => {} }) => {
   return (
     <ShadowView>
-      <Pressable
-        android_ripple={{ color: globalStyles.colors.primary50 }}
-        style={({ pressed }) => (pressed ? styles.itemPressed : null)}
-        onPress={onPress}
-      >
+      <Pressable style={({ pressed }) => (pressed ? styles.itemPressed : null)} onPress={onPress}>
         <View style={styles.item}>
           <View style={styles.dateContainer}>
             <Text style={[styles.textBase, styles.description]}>{description}</Text>
