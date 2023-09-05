@@ -5,5 +5,11 @@ import { ExpensesContext } from '../store';
 export const AllExpenses = () => {
   const { expenses } = useContext(ExpensesContext);
 
-  return <ExpensesOutput expenses={expenses} periodName="Total" />;
+  return (
+    <ExpensesOutput
+      expenses={expenses}
+      periodName="Total"
+      fallbackText="No registered expenses found"
+    />
+  );
 };
