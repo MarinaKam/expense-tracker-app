@@ -1,5 +1,4 @@
 import { StyleSheet, View } from 'react-native';
-import { dummyExpenses } from '../../store/expenses/dummyExpenses';
 import { globalStyles } from '../../theme';
 import { ExpensesList } from './ExpensesList';
 import { ExpensesSummary } from './ExpensesSummary';
@@ -7,8 +6,8 @@ import { ExpensesSummary } from './ExpensesSummary';
 export const ExpensesOutput = ({ expenses = [], periodName }) => {
   return (
     <View style={styles.container}>
-      <ExpensesSummary expenses={dummyExpenses} periodName={periodName} />
-      <ExpensesList expenses={dummyExpenses} />
+      <ExpensesSummary expenses={expenses} periodName={periodName} />
+      <ExpensesList expenses={expenses} />
     </View>
   );
 };

@@ -53,4 +53,16 @@ export const dummyExpenses = [
     amount: 20.65,
     date: new Date('2023-08-22'),
   },
+  {
+    id: 'a7',
+    description: 'Some book 1',
+    amount: 20.35,
+    date: new Date('2023-08-29'),
+  },
+  {
+    id: 'a8',
+    description: 'Some book 2',
+    amount: 10.0,
+    date: new Date('2023-08-30'),
+  },
 ];
