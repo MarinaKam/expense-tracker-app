@@ -1,7 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { IconButton } from '../components/Buttons';
-
 import { AllExpenses, RecentExpenses } from '../screens';
 import { globalStyles } from '../theme';
 
@@ -18,7 +17,7 @@ export function TabNavigator() {
         tabBarStyle: {
           backgroundColor: globalStyles.colors.primaryA700,
         },
-        tabBarActiveTintColor: globalStyles.colors.common.white,
+        tabBarActiveTintColor: globalStyles.colors.accent500,
         tabBarInactiveTintColor: globalStyles.colors.gray100,
         headerRight: ({ tintColor }) => (
           <IconButton
