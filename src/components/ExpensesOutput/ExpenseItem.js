@@ -9,7 +9,12 @@ export const ExpenseItem = ({ description, amount, date, onPress = () => {} }) =
       <Pressable style={({ pressed }) => (pressed ? styles.itemPressed : null)} onPress={onPress}>
         <View style={styles.item}>
           <View style={styles.dateContainer}>
-            <Text style={[styles.textBase, styles.description]}>{description}</Text>
+            <Text
+              // numberOfLines={1}
+              style={[styles.textBase, styles.description]}
+            >
+              {description}
+            </Text>
             <Text numberOfLines={1} style={styles.textBase}>
               {getFormattedDate(date)}
             </Text>
@@ -65,6 +70,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 4,
+    maxHeight: 40,
   },
   amount: {
     color: globalStyles.colors.primary500,
