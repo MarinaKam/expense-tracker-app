@@ -1,4 +1,4 @@
-import { useContext, useLayoutEffect } from 'react';
+import { useContext, useLayoutEffect, useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { IconButton } from '../components/Buttons';
 import { ExpenseForm } from '../components/ManageExpense';
@@ -6,9 +6,13 @@ import { ExpensesContext } from '../store';
 import { globalStyles } from '../theme';
 
 export const ManageExpenses = ({ route, navigation }) => {
-  const { addExpense, updateExpense, deleteExpense } = useContext(ExpensesContext);
+  const { expenses, addExpense, updateExpense, deleteExpense } = useContext(ExpensesContext);
   const id = route?.params?.expenseId;
   const isEditing = !!id;
+  const selectedExpense = useMemo(
+    () => expenses?.find((expense) => expense?.id === id) || null,
+    [id]
+  );
 
   const deleteHandler = () => {
     deleteExpense(id);
@@ -37,6 +41,7 @@ export const ManageExpenses = ({ route, navigation }) => {
   return (
     <View style={styles.container}>
       <ExpenseForm
+        defaultValues={selectedExpense}
         submitLabel={isEditing ? 'Update' : 'Add'}
         onCancel={cancelHandler}
         onSubmit={confirmHandler}
