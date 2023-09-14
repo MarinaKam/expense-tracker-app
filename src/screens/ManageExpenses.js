@@ -6,7 +6,8 @@ import { ExpensesContext } from '../store';
 import { globalStyles } from '../theme';
 
 export const ManageExpenses = ({ route, navigation }) => {
-  const { expenses, addExpense, updateExpense, deleteExpense } = useContext(ExpensesContext);
+  const { expenses, fetchExpenses, addExpense, updateExpense, deleteExpense } =
+    useContext(ExpensesContext);
   const id = route?.params?.expenseId;
   const isEditing = !!id;
   const selectedExpense = useMemo(
