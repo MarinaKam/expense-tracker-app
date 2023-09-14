@@ -31,7 +31,7 @@ export const globalStyles = {
     primaryA400: '#2979ff',
     primaryA700: '#2962ff',
     accent500: '#f7bc0c',
-    error50: '#ef9a9a',
+    error50: '#f1bbbb',
     error500: '#e53935',
     gray100: grey.A100,
     gray150: grey.A200,
