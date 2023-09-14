@@ -2,10 +2,10 @@ import { createHookReducer } from '../../hooks';
 import * as types from './types';
 
 export const reducer = createHookReducer({
-  [types.ADD]: (state, payload) => {
-    const id = new Date().toString() + Math.random().toString();
+  [types.GET_EXPENSES]: (state, payload) => payload.reverse(),
 
-    return [{ ...payload, id }, ...state];
+  [types.ADD]: (state, payload) => {
+    return [payload, ...state];
   },
 
   [types.UPDATE]: (state, { id, expense }) => {

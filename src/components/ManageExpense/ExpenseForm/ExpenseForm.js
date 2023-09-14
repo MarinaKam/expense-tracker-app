@@ -33,7 +33,9 @@ export const ExpenseForm = ({ defaultValues, submitLabel, onSubmit, onCancel }) 
     };
 
     const amountIsValid = !isNaN(expenseData?.amount) && expenseData?.amount > 0;
-    const dateIsValid = expenseData?.date.toString() !== 'Invalid Date';
+    const dateIsValid =
+      expenseData?.date.toString() !== 'Invalid Date' &&
+      formValues.date?.value?.split('-')?.length === 3;
     const descriptionIsValid = expenseData?.description?.trim()?.length > 0;
 
     if (!amountIsValid || !dateIsValid || !descriptionIsValid) {
