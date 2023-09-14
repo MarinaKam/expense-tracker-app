@@ -1,13 +1,13 @@
 import { useContext, useLayoutEffect, useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { IconButton } from '../components/Buttons';
+import { ErrorOverlay } from '../components/ErrorOverlay';
 import { ExpenseForm } from '../components/ManageExpense';
 import { ExpensesContext } from '../store';
 import { globalStyles } from '../theme';
 
 export const ManageExpenses = ({ route, navigation }) => {
-  const { expenses, fetchExpenses, addExpense, updateExpense, deleteExpense } =
-    useContext(ExpensesContext);
+  const { expenses, error, addExpense, updateExpense, deleteExpense } = useContext(ExpensesContext);
   const id = route?.params?.expenseId;
   const isEditing = !!id;
   const selectedExpense = useMemo(
@@ -38,6 +38,10 @@ export const ManageExpenses = ({ route, navigation }) => {
       title: isEditing ? 'Edit Expense' : 'Add Expense',
     });
   }, [navigation, isEditing]);
+
+  if (error) {
+    return <ErrorOverlay message={error} />;
+  }
 
   return (
     <View style={styles.container}>
